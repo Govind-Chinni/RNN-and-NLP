@@ -1,12 +1,10 @@
 1. Why do we divide the attention score by √d in scaled dot-product attention?
 Ans: It’s a normalization trick to keep the attention stable.
-When computing attention scores (i.e., Q · Kᵀ), the result can become very large, especially when the dimension d of the vectors is high.
-
-1.Large dot products → very large numbers going into the softmax.
-2.That makes softmax outputs very sharp — meaning one word gets almost all the attention, and others get nearly zero.
-3.This hurts learning by making gradients too small to adjust during training (a problem called vanishing gradients).
-
-*Dividing by √d keeps the values in a reasonable range, leading to:
+     When computing attention scores (i.e., Q · Kᵀ), the result can become very large, especially when the dimension d of the vectors is high.
+	1.Large dot products → very large numbers going into the softmax.
+	2.That makes softmax outputs very sharp — meaning one word gets almost all the attention, and others get nearly zero.
+	3.This hurts learning by making gradients too small to adjust during training (a problem called vanishing gradients).
+     *Dividing by √d keeps the values in a reasonable range, leading to:
 	1.Smoother softmax outputs
 	2.More stable gradients
 	3.Better learning overall
@@ -14,10 +12,9 @@ When computing attention scores (i.e., Q · Kᵀ), the result can become very la
 
 2. How does self-attention help the model understand relationships between words in a sentence?
 Ans: Self-attention allows every word in a sentence to look at (or "attend to") every other word, including itself. This helps the model understand context and relationships.
-
-For example, in the sentence:
+     For example, in the sentence:
 	“The cat sat on the mat because it was tired.”
-When processing "it", self-attention allows the model to look back at "cat" to understand what "it" refers to.
-When processing "mat", the model can focus on "sat" or "on" to better understand the spatial meaning.
+     When processing "it", self-attention allows the model to look back at "cat" to understand what "it" refers to.
+     When processing "mat", the model can focus on "sat" or "on" to better understand the spatial meaning.
 
-Self-attention captures context by dynamically weighting which words are important for understanding each word's meaning — regardless of position.
+     Self-attention captures context by dynamically weighting which words are important for understanding each word's meaning — regardless of position.
