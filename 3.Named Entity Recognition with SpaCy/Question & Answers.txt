@@ -1,0 +1,42 @@
+1. How does NER differ from POS tagging?
+Ans:  Think of a sentence like:
+	"Apple CEO Tim Cook visited New York in April."
+
+POS tagging (Part-of-Speech tagging) tells us the role of each word in the sentence.
+For example:
+	"Apple" → noun
+	"visited" → verb
+	"in" → preposition
+
+NER (Named Entity Recognition) goes a step further and identifies real-world things in the sentence.
+For example:
+	"Apple" → ORGANIZATION
+	"Tim Cook" → PERSON
+	"New York" → LOCATION
+	"April" → DATE
+
+
+* POS tagging labels grammar.
+* NER labels actual names, places, dates, etc.
+
+
+
+2. Describe two applications that use NER in the real world (e.g., financial news, search engines).
+Ans: Financial News Monitoring:
+	Banks or stock traders use NER to extract entities like company names, stock tickers, or dates from headlines and articles.
+		Example: From a headline like
+			"Tesla announces new battery tech in Berlin on June 10"
+		NER can pull:
+		"Tesla" → ORGANIZATION
+		"Berlin" → LOCATION
+		"June 10" → DATE
+	This helps automate alerts and decision-making.
+
+Search Engines & Assistants (Google, Siri):
+	When you ask:
+		"Who is the president of France?"
+	NER helps the system recognize:
+	"president" → title
+	"France" → COUNTRY
+
+It then finds and ranks content with those specific entities, improving search accuracy.
